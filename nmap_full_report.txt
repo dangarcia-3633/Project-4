@@ -1,0 +1,20 @@
+Nmap Full Network Report - 2025-04-14 15:07:33
+Target: 45.33.32.156
+
+
+Host: scanme.nmap.org
+IP Address: 45.33.32.156
+MAC Address: N/A
+OS Guess: Linux 5.0 - 5.14
+Device Type: Unknown Device
+----------------------------------------
+Open TCP Ports and Services:
+Port 22/ssh - open - OpenSSH 6.6.1p1 Ubuntu 2ubuntu2.13
+Port 80/http - open - Apache httpd 2.4.7
+Port 135/msrpc - filtered -
+Port 139/netbios-ssn - filtered -
+Port 445/microsoft-ds - filtered -
+Port 9929/nping-echo - open - Nping echo
+Port 31337/tcpwrapped - open -
+
+============================================================
