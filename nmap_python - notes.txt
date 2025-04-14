@@ -1,0 +1,52 @@
+# Python Script for NMAP
+import nmap
+
+scanner = nmap.PortScanner()
+scanner.scan('scanme.nmap.org', '22-80')
+
+for host in scanner.all_hosts():
+    print(f"Host: {host}")
+    for proto in scanner[host].all_protocols():
+        ports = scanner[host][proto].keys()
+        for port in sorted(ports):
+            state = scanner[host][proto][port]['state']
+            print(f"Port {port}/{proto} is {state}")
+
+
+#NMap installed at
+C:\Program Files (x86)\Nmap
+
+#Path for python script
+#Windows CMD path
+C:\Users\danie\OneDrive\Documents\ASU Cyber Boot Camp\Project 4\nmap_scan.py
+#GitBash path
+~/OneDrive/Documents/ASU Cyber Boot Camp/Project 4
+
+#Nmap IP
+45.33.32.156
+
+#See nmap-optimizer.py for full script
+# Script location
+#https://github.com/cyberproaustin/cyberproaustin/blob/main/nmap-optimizer.py
+#Owner Cyber Pro Austin 
+#Youtube Channel https://www.youtube.com/watch?v=XqVhy4DCAiI
+
+#Asychronous Scan
+import nmap
+import asyncio
+
+async def nmap_scan(ip_address):
+    nm = nmap.PortScannerAsync()
+    await nm.scan(ip_address)
+    return nm.scan_result
+
+async def run_scans(ip_addresses):
+    tasks = [nmap_scan(ip) for ip in ip_addresses]
+    results = await asyncio.gather(*tasks)
+    return results
+
+if __name__ == "__main__":
+    ip_addresses = ["127.0.0.1"]
+    results = asyncio.run(run_scans(ip_addresses))
+    print(results)
+

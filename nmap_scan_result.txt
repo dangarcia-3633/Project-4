@@ -1,0 +1,10 @@
+Host: 45.33.32.156
+  Ports:
+    22: open
+    80: open
+    135: filtered
+    139: filtered
+    445: filtered
+    9929: open
+    31337: open
+
