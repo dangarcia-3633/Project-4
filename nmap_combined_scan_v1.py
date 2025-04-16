@@ -113,7 +113,7 @@ def vuln_scan(target, f):
 # Main combined execution
 # -----------------------
 if __name__ == "__main__":
-    target_ip = "scanme.nmap.org"  
+    target_ip = "45.33.32.156"  
     output_filename = "nmap_scan_final.txt"
 
     with open(output_filename, 'w') as f:
